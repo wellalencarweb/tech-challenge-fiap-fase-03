@@ -3,9 +3,9 @@ import { ApiPaths } from "./paths";
 export const SwaggerConfig = {
     openapi: "3.0.0",
     info: {
-        title: "tech-challenge-fiap",
+        title: "fiap-soat1-tech-challenge",
         description:
-            "Sistema de Gerenciamento de Pedidos - Fast Food",
+            "Projeto do curso da pós tech Fiap Arquitetura de Software",
         version: "1.0.0",
     },
     servers: [
