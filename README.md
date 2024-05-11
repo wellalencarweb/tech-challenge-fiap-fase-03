@@ -101,4 +101,4 @@ Foram utilizadas técnicas de Domain Driven Design para definição dos fluxos:
 ### Dicionário da Linguagem Ubíqua
 - Dicionário
 
-  ![dicionario-ubiqua](docs/event-storming-ddd/dicionario-ubiqua.png)
+  ![dicionario-ubiqua](docs/event-storming-ddd/dicionario-ubiqua.png).
