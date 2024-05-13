@@ -4,7 +4,15 @@ Sistema de Gerenciamento de Pedidos - Fast Food
 ##  Grupo 33
 [Wellington da Silva Alencar](https://github.com/wellalencarweb) | rm353081
 
-[Link do Projeto](https://github.com/wellalencarweb/tech-challenge-fiap-fase-03)
+[tech-challenge-fiap-fase-03](https://github.com/wellalencarweb/tech-challenge-fiap-fase-03)
+
+[k8s-infra](https://github.com/wellalencarweb/k8s-infra)
+
+[postgres-infra](https://github.com/wellalencarweb/postgres-infra)
+
+[mongo-infra](https://github.com/wellalencarweb/mongo-infra)
+
+[authorization-validator-lambda](https://github.com/wellalencarweb/authorization-validator-lambda)
 
 [Link do Event Storm](https://miro.com/app/board/uXjVNVCMJaU=/?share_link_id=723408841855)
 
@@ -15,13 +23,15 @@ Sistema de Gerenciamento de Pedidos - Fast Food
 [docker-compose](docker-compose.yml)
 
 # Fase 3 - DISTRIBUIÇÃO DA APLICAÇÃO
+<a name="ancora"></a>
 ## Arquitetura
 Os diagramas que se seguem demonstram de forma macro, os fluxos de:
-- autenticação (via CPF)
-- autorização da aplicação.
-- respositórios
-- justificativas
+- [autenticação (via CPF)](#ancora1)
+- [autorização da aplicação](#ancora2)
+- [respositórios](#ancora3)
+- [justificativas](#ancora4)
 
+<a id="ancora1"></a>
 ## Autenticação
 ![Autenticação](docs/event-storming-ddd/authentication.png)
 
@@ -33,6 +43,7 @@ O token gerado pela função lambda é então retornado ao agente externo (site 
 
 Essa abordagem proporciona uma camada adicional de segurança, garantindo que apenas usuários autorizados, cuja existência foi verificada na base de dados, tenham acesso às funcionalidades do sistema
 
+<a id="ancora2"></a>
 ## Autorização
 ![Autorização](docs/event-storming-ddd/authorization.png)
 
@@ -40,16 +51,19 @@ Após a autenticação bem-sucedida, o token gerado é utilizado para validar se
 
 No entanto, para os propósitos práticos deste Tech Challenge (e também como um exercício educacional que não envolve dados sensíveis), optei por manter os acessos como públicos facilitando o desenvolvimento.
 
+<a id="ancora3"></a>
 ## Repositórios:
-**tech-challenge-fiap-fase-03**: Refere-se à aplicação da lanchonete desenvolvida em node.js para a terceira fase do Tech Challenge. Esta aplicação é responsável por fornecer os recursos necessários para a lanchonete, como gerenciamento de pedidos, estoque de produtos e integração com o cliente.
+**[tech-challenge-fiap-fase-03](https://github.com/wellalencarweb/tech-challenge-fiap-fase-03)**: Refere-se à aplicação da lanchonete desenvolvida em node.js para a terceira fase do Tech Challenge. Esta aplicação é responsável por fornecer os recursos necessários para a lanchonete, como gerenciamento de pedidos, estoque de produtos e integração com o cliente.
 
-**infra-postgres**: Aqui está a parte da infraestrutura dedicada à administração dos recursos relacionados ao banco de dados PostgreSQL. Isso envolve a configuração e o gerenciamento de instâncias, bancos de dados e tabelas do PostgreSQL, garantindo a persistência segura e confiável dos dados da aplicação.
+**[postgres-infra](https://github.com/wellalencarweb/postgres-infra)**: Aqui está a parte da infraestrutura dedicada à administração dos recursos relacionados ao banco de dados PostgreSQL. Isso envolve a configuração e o gerenciamento de instâncias, bancos de dados e tabelas do PostgreSQL, garantindo a persistência segura e confiável dos dados da aplicação.
 
-**infra-mongo**: Esta parte da infraestrutura é dedicada à administração dos recursos relacionados ao banco de dados MongoDB. Isso inclui a configuração e o gerenciamento de clusters, bancos de dados e coleções MongoDB, garantindo assim o armazenamento e a recuperação eficientes dos dados da aplicação.
+**[mongo-infra](https://github.com/wellalencarweb/mongo-infra)**: Esta parte da infraestrutura é dedicada à administração dos recursos relacionados ao banco de dados MongoDB. Isso inclui a configuração e o gerenciamento de clusters, bancos de dados e coleções MongoDB, garantindo assim o armazenamento e a recuperação eficientes dos dados da aplicação.
 
-**infra-k8s-resources**: Esta parte do projeto é responsável por administrar os recursos Kubernetes relacionados ao Tech Challenge. Isso inclui a configuração e o gerenciamento de pods, serviços, ingressos e outros componentes essenciais para garantir o funcionamento adequado da aplicação em um ambiente Kubernetes.
+**[k8s-infra](https://github.com/wellalencarweb/k8s-infra)**: Esta parte do projeto é responsável por administrar os recursos Kubernetes relacionados ao Tech Challenge. Isso inclui a configuração e o gerenciamento de pods, serviços, ingressos e outros componentes essenciais para garantir o funcionamento adequado da aplicação em um ambiente Kubernetes.
 
+**[authorization-validator-lambda](https://github.com/wellalencarweb/authorization-validator-lambda)**: Ambiente serverless que engloba a implementação da rota para a geração de tokens de usuário, uma função lambda para autorização e a configuração do API Gateway.
 
+<a id="ancora4"></a>
 ### Justificativa e modelagem dos bancos de dados
 ![Arquitetura BD](docs/event-storming-ddd/architecture_bd.png)
 
